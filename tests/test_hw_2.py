@@ -11,4 +11,4 @@ def test2(browser_conf):
     browser.open('https://google.com')
     browser.element('[name="q"]').should(be.blank).type('gfdghdsghdmjthndgfxn').press_enter()
     browser.element('[id="result-stats"]').should(have.text('Результатов: примерно 0'))
-    print("По данному запросу нет никаких результатов!!!")
+    print("По данному запросу нет никаких р")
