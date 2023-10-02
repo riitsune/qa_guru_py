@@ -1,5 +1,3 @@
-import pytest
-
 
 def test_greeting():
     """
@@ -9,6 +7,7 @@ def test_greeting():
     age = 25
     # TODO Сформируйте нужную строку
     output = f"Привет, {name}! Тебе {age} лет."
+    print(output)
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
 
@@ -40,9 +39,10 @@ def test_circle():
     # TODO сосчитайте площадь
     area = pi*(r**2)
     assert area == 1661.9025137490005
-
+    print(area)
     # TODO сосчитайте длину окружности
     length = 2*pi*r
+    print(length)
     assert length == 144.51326206513048
 
 
@@ -53,14 +53,11 @@ def test_random_list():
     """
 
     # TODO создайте список
-    # for i in range(0, 9):
-    #     list_1 = []
-    #     n = random.randint(1,100)
-    #     list_1.append(n)
-    #     return list_1
     list_1 = random.sample(range(1,100), 10)
-    assert len(list_1) == 10
-    assert list_1[0] < list_1[-1]
+    list_1_s = sorted(list_1)
+    print(list_1_s)
+    assert len(list_1_s) == 10
+    assert list_1_s[0] < list_1_s[-1]
 
 
 def test_unique_elements():
@@ -71,7 +68,7 @@ def test_unique_elements():
     # TODO удалите повторяющиеся элементы
     new = set(l)
     new_l = list(new)
-
+    print(new_l)
     assert isinstance(new_l, list)
     assert len(new_l) == 10
     assert new_l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
