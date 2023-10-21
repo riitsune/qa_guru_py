@@ -20,7 +20,7 @@ def test_fill_form():
 
 
     browser.element('#subjectsInput').click().type('Math').press_enter()
-    # browser.with_(timeout=browser.config.timeout * 3).element('[for="hobbies-checkbox-2"]').click()
+    browser.with_(timeout=browser.config.timeout * 3).element('[for="hobbies-checkbox-2"]').click()
     browser.element('#state').perform(command.js.scroll_into_view)
     browser.element('#uploadPicture').send_keys(os.path.abspath('image/image.jpg'))
     browser.element('#currentAddress').click().type("Saints-Petersburg, Sizova av.,9")
@@ -39,7 +39,7 @@ def test_fill_form():
         '7800800808',
         '26 August,2000',
         'Maths',
-        '',
+        'Reading',
         'image.jpg',
         'Saints-Petersburg, Sizova av.,9',
         'Uttar Pradesh Agra'
