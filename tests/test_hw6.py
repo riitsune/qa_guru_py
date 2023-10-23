@@ -3,7 +3,7 @@ from datetime import time
 def test_dark_theme_by_time():
 
     current_time = time(hour=23)
-    if time(hour=6) <= current_time <= time(hour=2):
+    if time(hour=6) <= current_time <= time(hour=23):
         is_dark_theme = False
     else:
         is_dark_theme = True
@@ -23,9 +23,8 @@ def test_dark_theme_by_time_and_user_choice():
     dark_theme_enabled_by_user = None
     # TODO переключите темную тему в зависимости от времени суток,
     #  но учтите что темная тема может быть включена вручную
-    is_dark_theme = True
     if dark_theme_enabled_by_user is None:
-        if time(hour=6) <= current_time <= time(hour=2):
+        if time(hour=6) <= current_time <= time(hour=23):
             is_dark_theme = False
         else:
             is_dark_theme = True
