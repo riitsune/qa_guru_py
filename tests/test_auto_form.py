@@ -3,7 +3,7 @@ from selene import have, command, by
 import os
 
 def test_fill_form():
-    browser.open("https://demoqa.com/automation-practice-form")
+    browser.open('/automation-practice-form')
 
     browser.element('#firstName').click().type('Rita')
     browser.element('#lastName').click().type('Shch')
