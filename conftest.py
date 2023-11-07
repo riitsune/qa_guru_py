@@ -1,11 +1,18 @@
-import pytest
-from selene.support.shared import browser
+from _pytest.fixtures import fixture
 
-@pytest.fixture(scope='function', autouse=True)
-def browser_conf():
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
+import shutil
+import utils
+import os
+from zipfile import ZipFile
+@fixture(scope="function", autouse=True)
+def resources():
+    if not os.path.exists(utils.TMP_PATH):
+        os.mkdir(os.path.join(utils.PROJECT_ROOT_PATH, "tmp"))
+
+    with ZipFile(os.path.join(utils.TMP_PATH, "resources"), 'w') as new_archive:
+        for filename in os.listdir(utils.RESOURCES_PATH):
+            new_archive.write(os.path.join(utils.RESOURCES_PATH, filename), arcname=filename)
 
     yield
-    browser.quit()
 
+    shutil.rmtree(utils.TMP_PATH)

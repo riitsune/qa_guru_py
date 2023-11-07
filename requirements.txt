@@ -1,2 +1,4 @@
-selene~=2.0.0rc4
+xlrd~=2.0.1
+pypdf~=3.16.3
+openpyxl~=3.1.2
 pytest==7.4.2
